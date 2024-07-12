@@ -272,4 +272,24 @@ game.gyms.forEach((gym)=>{
     if (gym.difficulty<8)
         gym.completed = true
     })
-game.gymStatus() // this made me realize that my previous work was incorrect so i resolved it by putting gymTally inside the function so its redeclared everytime
+game.gymStatus() /* this made me realize that my previous work was incorrect 
+so i resolved it by putting gymTally inside the function so its redeclared everytime 
+funciton is called */
+
+/*
+Exercise 16
+1. Log the entire `game` object to the console. Take a moment to review the changes you've made throughout the exercises.
+
+
+Solve Exercise 16 here:
+*/
+
+console.log(game)
+
+
+
+// level ups :
+
+
+
+
