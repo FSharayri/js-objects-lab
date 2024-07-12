@@ -17,7 +17,7 @@ const game = {
     ],
   }
 
-//   console.dir(pokemon, { maxArrayLength: null })
+  console.dir(pokemon, { maxArrayLength: null })
 console.log(pokemon[59-1].name)
 
 // console.log(game)
@@ -49,4 +49,22 @@ if (creature.starter) starterPokemons.push(creature)
  
 const starterPokemon = starterPokemons[3] // chose pikachu
 game.party.push(starterPokemon)
+console.log(game.party)
+
+
+/*
+Exercise 5
+1. Choose three more Pokémon from the `pokemon` array and add them to your party.
+2. Consider different attributes like 'type' or 'HP' for your selection. Which array method will you use to add them?
+
+
+Solve Exercise 5 here:
+*/
+
+pokemon.forEach((creature)=> {
+ if (creature.name==="Mew" || creature.name==="Magmar" ||creature.name==="Chansey" )
+    game.party.unshift(creature)
+
+})
+
 console.log(game.party)
