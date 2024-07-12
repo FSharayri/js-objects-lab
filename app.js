@@ -19,4 +19,5 @@ const game = {
 
 //   console.dir(pokemon, { maxArrayLength: null })
 console.log(pokemon[59-1].name)
-console.log(game)
+
+// console.log(game)
