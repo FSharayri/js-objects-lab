@@ -108,3 +108,15 @@ const evolvedCreature = pokemon[26-1]
 const starterPokemonIndex = game.party.indexOf(starterPokemon)
 game.party.splice(starterPokemonIndex,1,evolvedCreature)
 
+/*
+Exercise 8
+1. Print the name of each Pokémon in your party.
+2. Consider using a loop or an array method to access each Pokémon's name.
+
+Solve Exercise 8 here:
+*/
+
+game.party.forEach((creature)=>{
+    console.log(creature)
+    
+    })
