@@ -222,11 +222,12 @@ For example, if five gym objects have a value of `true` on their `completed` pro
 
 Solve Exercise 13 here:
 */
-const gymTally = {
-    completed  : 0,
-    incomplete : 0
-}
+
 game.gymStatus= function(){
+    const gymTally = {
+        completed  : 0,
+        incomplete : 0
+    }
     game.gyms.forEach((gym)=>{
         if (gym.completed)
             gymTally.completed++
@@ -257,3 +258,18 @@ game.partyCount = function(){
 }
 
 console.log(game.partyCount())
+
+
+
+/*
+Exercise 15
+1. Now, complete gyms with a difficulty below 8. Reflect on how this is similar to or different from the previous gym exercises.
+(change the value of `complete` in the qualifying objects from false to true).
+
+Solve Exercise 15 here:
+*/
+game.gyms.forEach((gym)=>{
+    if (gym.difficulty<8)
+        gym.completed = true
+    })
+game.gymStatus() // this made me realize that my previous work was incorrect so i resolved it by putting gymTally inside the function so its redeclared everytime
