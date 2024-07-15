@@ -293,3 +293,27 @@ console.log(game)
 
 
 
+/*
+Exercise 17
+1. Arrange the Pokémon in `game.party` by their HP. The one with the highest HP should come first.
+2. You'll need to use the `.sort()` method. How does the compare function work in sorting numbers?
+
+
+Solve Exercise 17 here:
+*/
+ // to sort them as numbers i used the explanation of the doc in MDN
+ // also used this for reference https://stackoverflow.com/questions/8837454/sort-array-of-objects-by-single-key-with-date-value
+// i commented out the thing below because it was just a mimick of sth i didnt quite understand
+//  game.party.sort(function(a, b) {
+//     let keyA = a.hp
+//     let keyB = b.hp;
+//     // Compare the 2 dates
+//     if (keyA < keyB) return -1;
+//     if (keyA > keyB) return 1;
+//     return 0;
+//   })
+//this i made with comprehension of what is going on 
+// learned this with by reading the mdn and seeing exmaples online !
+sortByHP = (a,b)=> b.hp - a.hp
+game.party.sort(sortByHP) 
+console.log(game.party)
