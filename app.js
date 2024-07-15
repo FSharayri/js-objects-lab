@@ -359,15 +359,15 @@ game.catchPokemon = function(pokemonObj) {
     game.collection.push(game.party.splice(6,1))
 }
 console.log("catching pokemons 3 times in a row to see")
-// game.catchPokemon(pokemon[130])
-// game.catchPokemon(pokemon[57])
-// game.catchPokemon(pokemon[13])
-// console.log(game.party)
-// console.log("again: ")
-// game.catchPokemon(pokemon[110])
-// game.catchPokemon(pokemon[81])
-// game.catchPokemon(pokemon[19])
-// console.log(game.party)
+game.catchPokemon(pokemon[130])
+game.catchPokemon(pokemon[57])
+game.catchPokemon(pokemon[13])
+console.log(game.party)
+console.log("again: ")
+game.catchPokemon(pokemon[110])
+game.catchPokemon(pokemon[81])
+game.catchPokemon(pokemon[19])
+console.log(game.party)
 
 /*
 Exercise 19
@@ -417,3 +417,57 @@ console.log(game.party)
 console.log(game.collection)
 console.log(game.party.length)
 
+
+/*
+Exercise 20
+Copy the `catchPokemon` method that you just wrote above, and paste it below. Modify is so that you can just pass in the name of a Pokemon instead of an entire object, and the method will look up the Pokemon from the data set for you.
+
+The string passed in should be allowed to be any case (for example, if the string 'PiKacHU' is passed to the function, it should match to 'Pikachu' in the data set). 
+
+If there is not a match, then return a string noting that the selected Pokemon does not exist. Ensure you do not decrement the pokeball count if an invalid Pokemon name is passed in, and also ensure that the Pokemon isn't added to the `game.party` or the `game.collection`.
+
+Solve Exercise 20 here:
+*/
+
+
+game.catchPokemon = function(pokemonName) {
+  let pokemonExists = false
+  for (creature of pokemon){
+    if (creature.name.toUpperCase() === pokemonName.toUpperCase()){
+      pokemonExists = true
+      pokemonObj = creature
+    }
+  }
+  
+  if (pokemonExists){
+    game.items.forEach((item)=>{
+      if (item.name==="pokeball") {
+        if (item.quantity >0){
+          item.quantity-=1 
+          console.log(game.items[1])
+          console.log(pokemonObj.name , pokemonName)
+          game.party.unshift(pokemonObj)
+          if (game.party.length > 6)
+            game.collection.push(game.party.splice(6,1))
+        }
+        else {
+          console.log("There are not enough pokeballs to catch the desired Pokemon")
+          return 
+        }
+      }
+    
+    
+    })
+  } 
+  else {console.log(`the selected Pokemon (${pokemonName}) does not exist`)}
+}
+game.items[1] = 5
+game.catchPokemon('Pikachu')
+game.catchPokemon('BlaStOise')
+game.catchPokemon("kakuna")
+game.catchPokemon('faris')
+game.catchPokemon('superman')
+
+console.log(game.party)
+console.log(game.collection)
+console.log(game.party.length)
