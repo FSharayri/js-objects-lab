@@ -1,3 +1,6 @@
+// const pokemon = require('./data.js')
+
+
 const game = {
     party: [],
     gyms: [
@@ -152,7 +155,7 @@ Solve Exercise 10 here:
 game.catchPokemon = function(pokemonObj) {
 game.party.push(pokemonObj)
 }
-game.catchPokemon(pokemon[149])
+// game.catchPokemon(pokemon[149])
 
 /*
 Exercise 11
@@ -356,12 +359,61 @@ game.catchPokemon = function(pokemonObj) {
     game.collection.push(game.party.splice(6,1))
 }
 console.log("catching pokemons 3 times in a row to see")
-game.catchPokemon(pokemon[100])
-game.catchPokemon(pokemon[50])
-game.catchPokemon(pokemon[1])
+// game.catchPokemon(pokemon[130])
+// game.catchPokemon(pokemon[57])
+// game.catchPokemon(pokemon[13])
+// console.log(game.party)
+// console.log("again: ")
+// game.catchPokemon(pokemon[110])
+// game.catchPokemon(pokemon[81])
+// game.catchPokemon(pokemon[19])
+// console.log(game.party)
+
+/*
+Exercise 19
+Copy the `catchPokemon` method that you just wrote above, and paste it below. The time has come to make it so that we cannot catch a Pokemon when we do not have any pokeballs to catch it with. 
+
+Modify the method so that if there are no pokeballs a message will be displayed that there are not enough pokeballs to catch the desired Pokemon.
+
+Also, ensure that the Pokemon isn't added to the `game.party` or the `game.collection`.
+
+Solve Exercise 19 here:
+*/
+
+game.catchPokemon = function(pokemonObj) {
+  game.items.forEach((item)=>{
+    if (item.name==="pokeball") {
+      if (item.quantity >0){
+        item.quantity-=1 
+        console.log(game.items[1])
+        game.party.unshift(pokemonObj)
+        if (game.party.length > 6)
+          game.collection.push(game.party.splice(6,1))
+      }
+      else {
+        console.log("There are not enough pokeballs to catch the desired Pokemon")
+        return 
+      }
+    }
+  
+  
+  })
+  
+}
+
+console.log(game.party.length)
+console.log("catching pokemons 3 times in a row to see")
+
+game.catchPokemon(pokemon[131])
+game.catchPokemon(pokemon[41])
+game.catchPokemon(pokemon[23])
+game.catchPokemon(pokemon[76])
+game.catchPokemon(pokemon[19])
+game.catchPokemon(pokemon[131])
+game.catchPokemon(pokemon[41])
+game.catchPokemon(pokemon[23])
+game.catchPokemon(pokemon[76])
 console.log(game.party)
-console.log("again: ")
-game.catchPokemon(pokemon[100])
-game.catchPokemon(pokemon[50])
-game.catchPokemon(pokemon[1])
-console.log(game.party)
+console.log(game.collection)
+console.log(game.party.length)
+
